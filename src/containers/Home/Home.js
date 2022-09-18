@@ -22,10 +22,10 @@ const Home = ({auth}) => {
           <LeftList items={transactions} />
         </Col>
         <Col md={8}>
-          <Route path="/home/:hash">
+          <Route path="/BAPS/home/:hash">
             <RightInfo isEmpty={false} auth={auth} />
           </Route>
-          <Route path="/home/:" exact>
+          <Route path="/BAPS/home/:" exact>
             <RightInfo isEmpty={true} auth={auth} />
           </Route>
         </Col>

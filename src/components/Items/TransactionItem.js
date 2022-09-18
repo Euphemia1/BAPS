@@ -14,7 +14,7 @@ const TransactionItem = ({ item }) => {
         <Card.Text>{item.docHash}</Card.Text>
         <Card.Text>Comment: {item.comment}</Card.Text>
         <Card.Text>Amount: Rs {item.amount}</Card.Text>
-        <Link to={`/home/${item.docHash}`}>
+        <Link to={`/BAPS/home/${item.docHash}`}>
         <Button variant="primary">View Details</Button>
         </Link>
       </Card.Body>
