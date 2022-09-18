@@ -1,7 +1,7 @@
 {
   "name": "BAPS",
   "version": "0.1.0",
-  "homepage": "https://Dbatublockchain.github.io/BAPS",
+  "homepage": "https://Dbatublockchain.github.io",
   "private": true,
   "dependencies": {
     "@pinata/sdk": "^1.1.23",
@@ -61,4 +61,4 @@
   "devDependencies": {
     "gh-pages": "^4.0.0"
   }
-}
+}}
