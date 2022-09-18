@@ -1,0 +1,3 @@
+Contract deployed by 0x5B6579fA6918E6c75e05D99d87e125b52668754D
+batu contract deployed to 0x990000F5fdb01ae4341E68073D9F4deCE4cae72e
+batufi contract deployed to 0x64d2B39c463307f5913E2BB02D9172f00A8185B5

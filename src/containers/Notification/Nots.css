@@ -1,0 +1,14 @@
+.nots {
+    width: 60%;
+    margin: 2rem auto;
+}
+
+.nots p {
+    text-align: left;
+}
+
+@media only screen and (max-width: 450px) {
+    .nots {
+        width: 95%;
+    }
+}

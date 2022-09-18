@@ -1,0 +1,36 @@
+.home-left-list {
+  height: calc(100vh - 4.5rem);
+  background: #eee;
+  padding: 8px 0;
+}
+
+.home-left-list-container {
+  overflow-y: scroll;
+  height: calc(100vh - 8.5rem);
+}
+
+.home-right-info {
+  height: calc(100vh - 4.5rem);
+  overflow-y: scroll;
+  padding: 1rem 0;
+}
+
+.approval-list {
+  height: 200px !important;
+  overflow-y: scroll;
+}
+
+.approval-item {
+  background: #eee;
+  margin-bottom: 8px;
+  padding: 8px 1rem;
+  border-radius: 4px;
+}
+
+.approval-item p {
+  margin: 0;
+}
+
+.modal-para span {
+  font-weight: 700;
+}
