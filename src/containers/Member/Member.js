@@ -12,14 +12,14 @@ import {
 import web3 from "../../ethereum/web3";
 import factory from "../../ethereum/factory";
 import MemberItem from "./MemberItem";
-import "./Member.css"
+import "./Member.css";
 
-const Member = ({auth}) => {
+const Member = ({ auth }) => {
   const [show, setShow] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
   const [users, setUsers] = useState([]);
   const [name, setName] = useState("");
-  const [role, setRole] = useState("");
+  const [role, setRole] = useState("Owner");
   const [maxAmount, setMaxAmount] = useState("");
   const [id, setId] = useState("");
   const [createAlert, setCreateAlert] = useState(false);
@@ -46,17 +46,16 @@ const Member = ({auth}) => {
   }, []);
 
   useEffect(() => {
-    if(auth == false) {
-        window.location.replace("/home")
+    if (auth == false) {
+      window.location.replace("/home");
     }
-  }, [auth])
+  }, [auth]);
 
   const fetchRoleList = async () => {
     try {
       const _roleList = await factory.methods.listRoles().call();
       //   const filteredList = userList.filter(item => item.id !== "0x0000000000000000000000000000000000000000");
       setRoleList(_roleList);
-      setRole(_roleList[0].role);
     } catch (err) {
       console.log(err);
     }
@@ -181,7 +180,13 @@ const Member = ({auth}) => {
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Member roles</Form.Label>
               <div>
-                <select className="member-create-select" onChange={(e) => setRole(e.target.value)}>
+                <select
+                  className="member-create-select"
+                  onChange={(e) => setRole(e.target.value)}
+                >
+                  <option value="Owner">
+                    Admin (Owner)
+                  </option>
                   {roleList.map((role) => (
                     <option value={role.role}>
                       {role.name} ({role.role})

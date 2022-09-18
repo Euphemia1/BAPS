@@ -48,8 +48,8 @@ const RightInfo = ({ isEmpty, auth }) => {
     setWaiting(false);
     setLoading(true);
 
-    setLoadingText("Validating tx...")
-    await factory.methods.validateTxDuration(hash).call()
+    setLoadingText("Validating tx...");
+    await factory.methods.validateTxDuration(hash).call();
 
     setLoadingText("Fetching user info...");
     const accounts = await web3.eth.getAccounts();
@@ -150,7 +150,7 @@ const RightInfo = ({ isEmpty, auth }) => {
 
   const handleClose = () => setShow(false);
   const handleShow = async (item) => {
-    setInfo(null)
+    setInfo(null);
     setShow(true);
     const userInfo = await factory.methods.userMap(item.id).call();
     setInfo(userInfo);
@@ -264,12 +264,18 @@ const RightInfo = ({ isEmpty, auth }) => {
                       View File
                     </Button>
                   </Col>
-                  <Col>
-                    <Countdown
-                      renderer={renderer}
-                      date={windowTime(item, userInfo)}
-                    />
-                  </Col>
+                  {item.status === "APPROVED" ||
+                  item.status === "DECLINED" ||
+                  item.status === "EXPIRED" ? (
+                    ""
+                  ) : (
+                    <Col>
+                      <Countdown
+                        renderer={renderer}
+                        date={windowTime(item, userInfo)}
+                      />
+                    </Col>
+                  )}
                   <Col>
                     <div
                       style={{ display: "flex", justifyContent: "flex-end" }}
