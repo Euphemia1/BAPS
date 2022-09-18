@@ -22,10 +22,10 @@ const Home = ({auth}) => {
           <LeftList items={transactions} />
         </Col>
         <Col md={8}>
-          <Route path="/BAPS/home/:hash">
+          <Route path={process.env.PUBLIC_URL + "/BAPS/home/:hash"}>
             <RightInfo isEmpty={false} auth={auth} />
           </Route>
-          <Route path="/BAPS/home/:" exact>
+          <Route path={process.env.PUBLIC_URL + "/BAPS/home/:"} exact>
             <RightInfo isEmpty={true} auth={auth} />
           </Route>
         </Col>
