@@ -1,5 +1,5 @@
 # How to run the code
-1. run git clone https://github.com/srshahare/dbatu-finance.git project_name
+1. run git clone https://github.com/Dbatublockchain/BAPS.git project_name
 2. go to root project directory
 3. run npm install
 4. run npm start
