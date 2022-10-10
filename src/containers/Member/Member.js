@@ -47,7 +47,7 @@ const Member = ({ auth }) => {
 
   useEffect(() => {
     if (auth == false) {
-      window.location.replace("/BAPS/home");
+      window.location.replace("/home");
     }
   }, [auth]);
 

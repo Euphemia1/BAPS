@@ -44,7 +44,7 @@ function App() {
       <div>
         <Header auth={auth} />
         <Router>
-          <Route path={process.env.PUBLIC_URL + "/BAPS"}>
+          <Route path="/">
             <Layout auth={auth} />
           </Route>
         </Router>

@@ -25,7 +25,7 @@ const CreateRole = ({auth}) => {
   useEffect(() => {
     fetchRoleList()
     if(auth == false) {
-        window.location.replace("/BAPS/home")
+        window.location.replace("/home")
     }
   }, [auth])
 

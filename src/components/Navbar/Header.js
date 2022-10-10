@@ -93,9 +93,9 @@ const Header = ({ auth }) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/BAPS/home">Home</Nav.Link>
+            <Nav.Link href="/home">Home</Nav.Link>
             <Nav.Link href="https://etherscan.io/">Etherscan</Nav.Link>
-            {auth && <Nav.Link href="/BAPS/members">Members</Nav.Link>}
+            {auth && <Nav.Link href="/members">Members</Nav.Link>}
             {auth && userInfo && (
               <NavDropdown
                 id="nav-dropdown-light-example"
@@ -103,12 +103,12 @@ const Header = ({ auth }) => {
                 menuVariant="dark"
               >
                 {userInfo.role === "LA" && (
-                  <NavDropdown.Item href="/BAPS/create">
+                  <NavDropdown.Item href="/create">
                     Create Procurement
                   </NavDropdown.Item>
                 )}
                 {userInfo.role === "Owner" && (
-                  <NavDropdown.Item href="/BAPS/create-role">
+                  <NavDropdown.Item href="/create-role">
                     Create Role
                   </NavDropdown.Item>
                 )}
@@ -117,7 +117,7 @@ const Header = ({ auth }) => {
             <Nav.Link href="#" onClick={handleShow}>
               Wallet
             </Nav.Link>
-            <Nav.Link href="/BAPS/notification">Notification</Nav.Link>
+            <Nav.Link href="/notification">Notification</Nav.Link>
           </Nav>
           {myAddress !== "" && userInfo ? (
             <Dropdown>
