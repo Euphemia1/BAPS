@@ -117,6 +117,25 @@ const Header = ({ auth }) => {
             <Nav.Link href="#" onClick={handleShow}>
               Wallet
             </Nav.Link>
+            <NavDropdown
+              id="nav-dropdown-light-example"
+              title="Get Recommendation"
+              menuVariant="dark"
+            >
+              <NavDropdown.Item href="/travel-grant">
+                Travel Grant
+              </NavDropdown.Item>
+
+              <NavDropdown.Item href="/create-role">
+                Procurement of equipment
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/create-role">
+                Leave Application
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/create-role">
+                Medical Bill
+              </NavDropdown.Item>
+            </NavDropdown>
             <Nav.Link href="/notification">Notification</Nav.Link>
           </Nav>
           {myAddress !== "" && userInfo ? (

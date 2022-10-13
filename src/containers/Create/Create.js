@@ -7,9 +7,10 @@ import factory from "../../ethereum/factory";
 import web3 from "../../ethereum/web3";
 import { uid } from "uid";
 import ipfs from "../../ethereum/ipfs";
+const LogisticRegression = require("ml-logistic-regression");
+const { Matrix } = require("ml-matrix");
 
-
-const Create = ({auth}) => {
+const Create = ({ auth }) => {
   const [file, setFile] = useState("");
   const [amount, setAmount] = useState("");
   const [comment, setComment] = useState("");
@@ -18,12 +19,13 @@ const Create = ({auth}) => {
   const [creating, setCreating] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [estimate, setEstimate] = useState();
 
   useEffect(() => {
-    if(auth == false) {
-        window.location.replace("/home")
+    if (auth == false) {
+      window.location.replace("/home");
     }
-  }, [auth])
+  }, [auth]);
 
   function getBase64(file) {
     return new Promise((resolve, reject) => {
@@ -69,10 +71,14 @@ const Create = ({auth}) => {
             from: accounts[0],
           });
         const tx = transaction.transactionHash;
+
+        //* calculate the estimate duration for the procurrement to be approved by all the authority
+        calculateEstimate(amount, transaction);
+
         setCreating(false);
-        setFile("")
-        setAmount("")
-        setComment("")
+        setFile("");
+        setAmount("");
+        setComment("");
         setSuccess(
           "Successfully created transaction by " +
             accounts[0] +
@@ -87,6 +93,38 @@ const Create = ({auth}) => {
       setCreating(false);
       console.log(err);
     }
+  };
+
+  // function that calculates the estimate duration
+  const calculateEstimate = async (amount, tx) => {
+    // get all the previous transaction amount and add the latest tx amount
+    const transactionList = await factory.methods.listTransaction().call();
+    let list = [];
+    let dateList = [];
+    let lastIndex = 0;
+    transactionList.map((item, index) => {
+      list.push([index, item.amount]);
+      dateList.push(item.timestamp);
+      lastIndex = index;
+    });
+    const matrixAmount = [...list, [lastIndex + 1, amount]];
+    const matrixDates = dateList;
+
+    // Our training set (X,Y).
+    const X = new Matrix(matrixAmount);
+
+    // get all the
+    const Y = Matrix.columnVector(matrixDates);
+
+    // We will train our model.
+    const logreg = new LogisticRegression({
+      numSteps: 1000,
+      learningRate: 5e-3,
+    });
+    logreg.train(X, Y);
+
+    const finalResults = logreg.predict(X);
+    setEstimate(finalResults)
   };
 
   return (

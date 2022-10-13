@@ -92,6 +92,7 @@ contract BatuFi {
         return true;
     }
     
+    // function to create the member
     function createUser(string memory _role, address _id, string memory _name) public {
         User storage u = userMap[_id];
         u.role = _role;
@@ -101,6 +102,7 @@ contract BatuFi {
         userList.push(_id);
     }
     
+    // function to create the role that will be assigned to each member
     function createRole(string memory _role, string memory _name, uint256 _maxAmount, uint256 _minAmount) public {
         Role storage r = roleMap[_role];
         r.number = roleCount++;
@@ -111,6 +113,7 @@ contract BatuFi {
         roleList.push(r);
     }
 
+    // validate the tx for time window of members / validators
     function validateTxDuration(string memory _docHash) public returns(uint) {
         Transaction storage t = transactionMap[_docHash];
         uint256 timestamp = t.timestamp;
@@ -168,9 +171,11 @@ contract BatuFi {
         return 1;
     }
     
+    // function to delete the user
     function deleteUser(uint256 number) public {
         delete userList[number];
     }
+
 
     function getUptoApprovalRole(uint256 _amount) internal pure returns(string memory) {
         if(_amount <= 5000 ) {
@@ -227,6 +232,7 @@ contract BatuFi {
         }
     }
     
+    // function to create the transaction/procurrement
     function createTransaction(string memory _id, string memory _hash, string memory _url, string memory _comment, uint256 _amount) public memberOnly {
         // create transaction object and store the values
         Transaction storage t = transactionMap[_hash];
@@ -264,6 +270,7 @@ contract BatuFi {
         notificationList.push(n);
     }
 
+    // function to approve the transaction
     function approveTransaction(string memory _hash) public returns(uint) {
         Transaction storage t = transactionMap[_hash];
         string storage currentApproval = t.currentApprovalRole;
