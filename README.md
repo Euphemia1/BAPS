@@ -10,5 +10,6 @@
 2. In metamask, you should be logged in first.
 3. Make sure you are in the Sepolia network.
 4. You will need some eth in your wallet for Transactions.
+5. Ether does not require viewing the Transactions.
 
 Live Demo: https://dbatublockchain.github.io/BAPS
