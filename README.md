@@ -1,5 +1,5 @@
 # How to run the code
-1. run git clone https://github.com/Dbatublockchain/BAPS.git project_name
+1. run git clone https://github.com/Dbatublockchain/BAPS.git
 2. go to the root project directory
 3. run npm install
 4. run npm start
