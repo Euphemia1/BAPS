@@ -1,8 +1,8 @@
 // import ipfsClient from "ipfs-http-client";
 import IPFS from "ipfs-api";
 
-const projectId = "2EFfbDVterU2Sbbp9Auds6mxpGk";
-const projectSecret = "c9a3cec809e6b681d58578c485c90360";
+const projectId = "2UIZMWmPzQ6AiKfmzePxDfGM0U8";
+const projectSecret = "78f5e328c7bb8aed7ab4ffface404949";
 const auth =
   "Basic " + Buffer.from(projectId + ":" + projectSecret).toString("base64");
 

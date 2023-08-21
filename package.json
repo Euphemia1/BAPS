@@ -17,6 +17,7 @@
     "ipfs-api": "^26.1.2",
     "ipfs-core": "^0.8.0",
     "ipfs-http-client": "^42.0.0",
+    "ml-logistic-regression": "^2.0.0",
     "mocha": "^8.3.2",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",

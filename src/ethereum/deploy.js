@@ -6,9 +6,8 @@ const compiledBatu = require("./build/BatuFi.json");
 
 // const provider = ganache.provider()
 const provider = new HDWalletProvider(
-  "capital domain approve brief neglect mobile seat ethics tuition fiber creek inside",
-  "https://rinkeby.infura.io/v3/bc262ab82c064a8881f0f2fb2ff78728"
-  // 'https://goerli.infura.io/v3/bc262ab82c064a8881f0f2fb2ff78728'
+  "remove spread idea habit frown bread code artwork cable cross type nation",
+  "https://sepolia.infura.io/v3/f47f46b099464563b22b179b0567ac33"
 );
 const web3 = new Web3(provider);
 
@@ -16,6 +15,7 @@ const deploy = async () => {
   // Get a list of all accounts
   try {
     const accounts = await web3.eth.getAccounts();
+    console.log(accounts)
 
     console.log("Contract deployed by", accounts[0]);
 
