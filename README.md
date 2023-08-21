@@ -5,7 +5,7 @@
 4. run npm start
 5. Click on home.
 
-# Things to consider
+# Things to Consider:
 1. Make sure Metamask is installed as an extension in your browser.
 2. In metamask, you should be logged in first.
 3. Make sure you are in the Sepolia network.
