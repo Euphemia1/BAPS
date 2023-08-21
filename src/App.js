@@ -44,7 +44,7 @@ function App() {
       <div>
         <Header auth={auth} />
         <Router>
-          <Route path="/">
+          <Route path="/BAPS">
             <Layout auth={auth} />
           </Route>
         </Router>

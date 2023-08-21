@@ -9,19 +9,19 @@ import CreateRole from "./Create/CreateRole";
 const Layout = ({auth}) => {
   return (
     <div style={{ paddingTop: "4.5rem" }}>
-      <Route path="/home" >
+      <Route path="/BAPS/home" >
         <Home auth={auth} />
       </Route>
-      <Route path="/create">
+      <Route path="/BAPS/create">
         <Create auth={auth} />
       </Route>
-      <Route path="/create-role">
+      <Route path="/BAPS/create-role">
         <CreateRole auth={auth} />
       </Route>
-      <Route path="/members">
+      <Route path="/BAPS/members">
         <Member auth={auth} />
       </Route>
-      <Route path="/notification">
+      <Route path="/BAPS/notification">
         <Notification auth={auth} />
       </Route>
     </div>

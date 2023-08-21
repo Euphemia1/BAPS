@@ -89,11 +89,11 @@ const Header = ({ auth }) => {
         variant="dark"
         expand="lg"
       >
-        <Navbar.Brand href="/home">DBATU FINANCE</Navbar.Brand>
+        <Navbar.Brand href="/BAPS/home">DBATU FINANCE</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/home">Home</Nav.Link>
+            <Nav.Link href="/BAPS/home">Home</Nav.Link>
             <Nav.Link href="https://etherscan.io/">Etherscan</Nav.Link>
             {auth && <Nav.Link href="/members">Members</Nav.Link>}
             {auth && userInfo && (
@@ -103,12 +103,12 @@ const Header = ({ auth }) => {
                 menuVariant="dark"
               >
                 {userInfo.role === "LA" && (
-                  <NavDropdown.Item href="/create">
+                  <NavDropdown.Item href="/BAPS/create">
                     Create Procurement
                   </NavDropdown.Item>
                 )}
                 {userInfo.role === "Owner" && (
-                  <NavDropdown.Item href="/create-role">
+                  <NavDropdown.Item href="/BAPS/create-role">
                     Create Role
                   </NavDropdown.Item>
                 )}
@@ -122,21 +122,21 @@ const Header = ({ auth }) => {
               title="Get Recommendation"
               menuVariant="dark"
             >
-              <NavDropdown.Item href="/travel-grant">
+              <NavDropdown.Item href="/BAPS/travel-grant">
                 Travel Grant
               </NavDropdown.Item>
 
-              <NavDropdown.Item href="/create-role">
+              <NavDropdown.Item href="/BAPS/create-role">
                 Procurement of equipment
               </NavDropdown.Item>
-              <NavDropdown.Item href="/create-role">
+              <NavDropdown.Item href="/BAPS/create-role">
                 Leave Application
               </NavDropdown.Item>
-              <NavDropdown.Item href="/create-role">
+              <NavDropdown.Item href="/BAPS/create-role">
                 Medical Bill
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="/notification">Notification</Nav.Link>
+            <Nav.Link href="/BAPS/notification">Notification</Nav.Link>
           </Nav>
           {myAddress !== "" && userInfo ? (
             <Dropdown>
